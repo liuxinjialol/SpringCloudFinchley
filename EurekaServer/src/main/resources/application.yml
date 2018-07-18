@@ -1,6 +1,5 @@
 server:
   port: 8761
-
 eureka:
   instance:
     hostname: localhost
@@ -10,6 +9,7 @@ eureka:
     serviceUrl:
       defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
 
+#服务注册与发现，相当于zokkeeper
 spring:
   application:
     name: eureka-server

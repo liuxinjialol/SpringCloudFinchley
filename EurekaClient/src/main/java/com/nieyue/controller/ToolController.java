@@ -5,6 +5,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.servlet.http.HttpSession;
+
 /**
  * Created by 聂跃 on 2018/7/17.
  */
@@ -17,5 +19,9 @@ public class ToolController {
     @RequestMapping("/hi")
     public String home(@RequestParam(value = "name", defaultValue = "forezp") String name) {
         return "hi " + name + " ,i am from port:" + port;
+    }
+    @RequestMapping("/getSession")
+    public String getSession( HttpSession session) {
+        return session.getId();
     }
 }

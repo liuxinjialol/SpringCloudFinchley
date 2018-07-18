@@ -1,0 +1,40 @@
+server:
+  port: 8881
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+#配置中心，客户端
+spring:
+  application:
+    name: config-client
+  cloud:
+    config:
+      label: master
+      #dev开发环境配置文件,test测试环境,pro正式环境
+      profile: dev
+      #直接访问ip地址
+      #uri: http://localhost:8888/
+      #通过注册于发现中心访问
+      discovery:
+        enabled: true
+        service-id: config-server
+#bus总线
+    bus:
+      enabled: true
+      trace:
+        enabled: true
+#rabbitmq
+  rabbitmq:
+    host: 118.190.133.146
+    port: 5672
+    username: nieyue
+    password: xxxx
+#/actuator/bus-refresh 更新配置文件
+management:
+  endpoints:
+    web:
+      exposure:
+        include: bus-refresh
+
+
