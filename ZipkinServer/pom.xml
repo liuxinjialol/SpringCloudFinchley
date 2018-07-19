@@ -4,12 +4,13 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.nieyue</groupId>
-	<artifactId>ribbon</artifactId>
+	<artifactId>zipkinserver</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>Ribbon</name>
+	<name>ZipkinServer</name>
 	<description>Demo project for Spring Boot</description>
+
 
 	<parent>
 		<groupId>com.nieyue</groupId>
@@ -22,29 +23,22 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/io.zipkin.java/zipkin-server -->
 		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-netflix-ribbon</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-netflix-hystrix</artifactId>
+			<groupId>io.zipkin.java</groupId>
+			<artifactId>zipkin-server</artifactId>
+			<version>2.10.1</version>
 		</dependency>
 
-		<!--Hystrix Dashboard图形展示 -->
+
 		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-actuator</artifactId>
+			<groupId>io.zipkin.java</groupId>
+			<artifactId>zipkin-autoconfigure-ui</artifactId>
+			<version>2.10.1</version>
 		</dependency>
-		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-netflix-hystrix-dashboard</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-netflix-turbine</artifactId>
-		</dependency>
-		<!--Hystrix Dashboard图形展示 end -->
+
 	</dependencies>
+
+
 
 </project>

@@ -8,3 +8,27 @@ server:
 spring:
   application:
     name: ribbon
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+      cors:
+        allowed-origins: "*"
+        allowed-methods: "*"
+
+turbine:
+  ##需要监控的服务名
+  app-config: eureka-client
+  aggregator:
+    cluster-config: "'EurekaClient'"
+    #cluster-config: "'default'"
+  ##new String("default")
+  cluster-name-expression: metadata['cluster']
+  #cluster-name-expression: "'default'"
+  combine-host-port: true
+  instanceUrlSuffix:
+    ##key为clusterConfig的集群名字，默认为default,value为集群的hystrix监控url后缀，springboot2.0默认为actuator/hystrix.stream
+    #default: actuator/hystrix.stream
+    EurekaClient: actuator/hystrix.stream

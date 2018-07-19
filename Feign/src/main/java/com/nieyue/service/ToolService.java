@@ -13,4 +13,5 @@ import org.springframework.web.bind.annotation.RequestParam;
 public interface ToolService {
     @RequestMapping(value = "/hi",method = RequestMethod.GET)
     String hi(@RequestParam(value = "name") String name);
+
 }

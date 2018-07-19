@@ -1,0 +1,10 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+server:
+  port: 9411
+#分布式数据链路跟踪服务端
+spring:
+  application:
+    name: zipkin-server
