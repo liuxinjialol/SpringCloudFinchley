@@ -4,11 +4,32 @@ eureka:
       defaultZone: http://localhost:8761/eureka/
 server:
   port: 8769
+  servlet:
+    session:
+      cookie:
+        name: token
+        max-age: 1800
 #路由网关，转发、过滤器。
 spring:
   application:
     name: zuul
+  session:
+    store-type: redis
+  redis:
+    host: 127.0.0.1
+    password: liliu
+    port: 6379
+    database: 1
+    timeout: 3000
+    lettuce:
+      pool:
+        min-idle: 100
+        max-idle: 300
+        max-active: 800
 zuul:
+  #全局header过滤，保障session cookie
+  sensitive-headers:
+  #sensitive-headers: "*"
   routes:
     ribbon:
       path: /ribbon/**

@@ -1,11 +1,30 @@
 server:
-  port: 8762
+  #port: 8762
   #port: 8763
+  port: 8760
+  servlet:
+    session:
+      cookie:
+        name: token
+        max-age: 1800
+
 #服务客户端，实际的业务项目
 spring:
   application:
     name: eureka-client
-
+  session:
+    store-type: redis
+  redis:
+    host: 127.0.0.1
+    password: liliu
+    port: 6379
+    database: 1
+    timeout: 3000
+    lettuce:
+      pool:
+        min-idle: 100
+        max-idle: 300
+        max-active: 800
 eureka:
   instance:
     metadata-map:

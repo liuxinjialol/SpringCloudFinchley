@@ -2,7 +2,7 @@ package com.nieyue.controller;
 
 import com.nieyue.service.ToolService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class ToolController {
     @Autowired
     ToolService toolService;
-    @GetMapping(value = "/hi")
+    @RequestMapping(value = "/hi")
     public String sayHi(@RequestParam String name) {
         return toolService.hi( name );
     }
