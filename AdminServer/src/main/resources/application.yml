@@ -1,0 +1,29 @@
+server:
+  port: 8759
+#服务客户端，实际的业务项目
+spring:
+  application:
+    name: admin-server
+  profiles:
+    active:
+      - secure
+  security:
+    user:
+      name: "nieyue"
+      password: "123456"
+eureka:
+  instance:
+    metadata-map:
+      user.name: "nieyue"
+      user.password: "123456"
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
